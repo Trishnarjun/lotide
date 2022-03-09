@@ -21,11 +21,10 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
   }
 }
 
-const without = function(words, removedWord) {
-  let newArray = words;
-  let indexOfWord = newArray.indexOf(removedWord);
-  newArray.splice(indexOfWord,indexOfWord);
-  
+const without = function(arr, removedWord) {
+  let wordsClone = words.slice();
+  let indexOfWord = wordsClone.indexOf(removedWord[0]);
+  wordsClone.splice(indexOfWord,indexOfWord);
 }
 
 const words = ["hello", "world", "lighthouse"];
