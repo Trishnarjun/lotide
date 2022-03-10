@@ -18,6 +18,7 @@ const countLetters = function(arr) {
       }
     } 
   }
+  delete objects[" "];
   console.log(objects);
   // for (let k = 0; i < array.length; k++) {
     
