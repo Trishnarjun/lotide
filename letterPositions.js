@@ -1,21 +1,17 @@
 const letterPositions = function(sentence) {
   const results = {};
   // logic to update results here
-  for (let i = 0; i < sentence.length; i++) {
-    let counter = 0;
-    for (let j = 0; j < sentence.length; j++) {
-      if (sentence.charAt(i) === sentence.charAt(j)) {
-        counter++
-        let key = sentence.charAt(i);
-        if (Array.isArray(results[key])) {
-          console.log(Array.isArray(results[key]))
-          results[key].push(sentence.indexOf(sentence.charAt(i)) + 1);
-        } else {
-          results[key] = [sentence.indexOf(sentence.charAt(i))];
-        }
-        
-      }
-    } 
+  let counter = 0;
+  for (let j = 0; j < sentence.length; j++) {
+    if (sentence.charAt(j) === sentence.charAt(j)) {
+      counter++
+      let key = sentence.charAt(j);
+    if (Array.isArray(results[key])) {
+      results[key].push(sentence.indexOf(sentence.charAt(j))+1);
+    } else {
+      results[key] = [sentence.indexOf(sentence.charAt(j))];
+      }   
+    }
   }
   delete results[" "];
   console.log(results);
@@ -42,4 +38,4 @@ const eqArrays = function(arrayOne, arrayTwo) {
   } 
 };
 
-assertArraysEqual(letterPositions("hello").l, [2,3,3,3]);
+assertArraysEqual(letterPositions("hello").e, [1]);
