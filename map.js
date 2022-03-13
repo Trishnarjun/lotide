@@ -5,20 +5,18 @@ const map = function(array, callback) {
     results.push(callback(item));
   }
   return results;
-}
+};
 
 const eqArrays = function(arrayOne, arrayTwo) {
-  let counter = 0;
-  for (let i = 0; i < arrayOne.length; i++ ) {
-    if (arrayOne[i] === arrayTwo[i]) {
-      counter++;
+  if (arrayOne.length !== arrayTwo.length) {
+    return false;
+  }
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] !== arrayTwo[i]) {
+      return false;
     }
   }
-  if (counter === arrayOne.length & counter === arrayTwo.length ){
-    return true
-  } else{
-    return false;
-  } 
+  return true;
 };
 
 const assertArraysEqual = function(arrayOne, arrayTwo) {
@@ -27,7 +25,7 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
   } else {
     console.log(`🤧🤧🤧 Assertion Failed: ${arrayOne} !==  ${arrayTwo}`);
   }
-}
+};
 const words = ["ground", "control", "to", "major", "tom"];
 const results1 = map(words, word => word[0]);
 console.log(results1);

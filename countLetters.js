@@ -1,7 +1,7 @@
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`😏😏😏 Assertion Passed: ${actual} === ${expected}`);
-    } else {
+  } else {
     console.log(`🤧🤧🤧 Assertion Failed: ${actual} !==  ${expected}`);
   }
 };
@@ -12,18 +12,18 @@ const countLetters = function(arr) {
     let counter = 0;
     for (let j = 0; j < arr.length; j++) {
       if (arr.charAt(i) === arr.charAt(j)) {
-        counter++
+        counter++;
         let key = arr.charAt(i);
         objects[key] = counter;
       }
-    } 
+    }
   }
   delete objects[" "];
   console.log(objects);
   // for (let k = 0; i < array.length; k++) {
     
   // }
-}
+};
 
 countLetters('LHL');
-countLetters("lighthouse in the house")
+countLetters("lighthouse in the house");

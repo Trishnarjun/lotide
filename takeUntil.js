@@ -1,5 +1,5 @@
 const takeUntil = function(array, callback) {
-  let result = []; 
+  let result = [];
   const cutOff = array.filter(callback);
   for (let i = 0; i < array.length; i++) {
     if (array[i] === cutOff[0]) {
@@ -7,22 +7,20 @@ const takeUntil = function(array, callback) {
     } else {
       result.push(array[i]);
     }
-  };
-  return result
+  }
+  return result;
 };
 
 const eqArrays = function(arrayOne, arrayTwo) {
-  let counter = 0;
-  for (let i = 0; i < arrayOne.length; i++ ) {
-    if (arrayOne[i] === arrayTwo[i]) {
-      counter++;
+  if (arrayOne.length !== arrayTwo.length) {
+    return false;
+  }
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] !== arrayTwo[i]) {
+      return false;
     }
   }
-  if (counter === arrayOne.length & counter === arrayTwo.length ){
-    return true
-  } else{
-    return false;
-  } 
+  return true;
 };
 
 const assertArraysEqual = function(arrayOne, arrayTwo) {
@@ -31,7 +29,7 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
   } else {
     console.log(`🤧🤧🤧 Assertion Failed: ${arrayOne} !==  ${arrayTwo}`);
   }
-}
+};
 
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
