@@ -29,7 +29,6 @@ const eqObjects = function(object1, object2) {
   }
   for (let i = 0; i < setOfKeys2.length; i++) {
     if (object1[setOfKeys1[i]] === object2[setOfKeys1[i]] && object2[setOfKeys1[1]].length === 1) {
-      console.log(object2[setOfKeys1[1]].length);
       return true;
     } else if (eqArrays(object1[setOfKeys1[1]], object2[setOfKeys1[1]])) {
       return true;
